@@ -1,0 +1,1 @@
+{"tableBlock":[{"tableName":"member_detail","alias":"b","useCols":["detail_id","member_id"],"notUseCols":["real_name","sex","born_date","idcard_no","recruit","is_marry","have_child","education","salary","house_state","car_state","socialsec_no","last_modify"]}],"relationBlock":[]}

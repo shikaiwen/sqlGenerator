@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="GBK"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+    <tlib-version>1.0</tlib-version>
+    <short-name>kevinTaglib</short-name>
+    <!-- 定义该标签库的URI -->
+    <uri>http://www.kevin.org/mytaglib</uri>
+    <!-- 定义第一个标签 -->
+    <tag>
+        <!-- 定义标签名 -->
+        <name>helloWorld</name>
+        <!-- 定义标签处理类 -->
+        <tag-class>com.learning.taglib.HelloWorldTag</tag-class>
+        <!-- 定义标签体为空 -->
+        <body-content>empty</body-content>
+        <attribute>
+        	<name>name</name>
+        	<required>true</required>
+        	<fragment>true</fragment>
+        </attribute>
+    </tag>
+    
+    <!-- 循环的标签 -->
+    <tag>
+    	<name>interator</name>
+    	<tag-class>com.learning.taglib.InteratorTagTest</tag-class>
+    	<body-content>tagdependent</body-content>
+    	
+    	<attribute>
+    		<name>collection</name>
+    		<required>true</required>
+    	</attribute>
+    	
+    	<attribute>
+    		<name>item</name>
+    		<required>true</required>
+    	</attribute>
+    </tag>
+     
+    <!-- 原始标签 学习 -->
+    <tag>
+    	<name>t1</name>
+    	<tag-class>com.learning.taglib.Tag1</tag-class>
+    	<body-content>JSP</body-content>
+    	
+    	<attribute>
+    		<name>loop</name>
+    		<required>true</required>
+    	</attribute>
+    </tag>
+    
+    <!-- 嵌套标签 -->
+    <tag>
+    	<name>nest</name>
+    	<tag-class>com.learning.taglib.NestTag</tag-class>
+    	<body-content>JSP</body-content>
+    </tag>
+    <!--  子标签-->
+    <tag>
+    	<name>child1</name>
+    	<tag-class>com.learning.taglib.ChildTag1</tag-class>
+    	<body-content>JSP</body-content>
+    </tag>
+</taglib>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="com.sqlgenerate.project">
+    
+    <!-- 重载的方法放到一个节点下 -->
+    <methodNode  name="">
+        <sqlNode id="" configFile="">
+            <currentSql>
+                <![CDATA[
+            	]]>
+            </currentSql>
+            <oldSql>
+				<![CDATA[
+				]]>
+            </oldSql>
+        </sqlNode>
+    </methodNode>
+</class>

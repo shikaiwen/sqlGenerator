@@ -1,0 +1,85 @@
+
+<script type="text/javascript" src="${rc.contextPath}/resources/jquery1.8.js" ></script>
+
+<script type="text/javascript">
+var on = new Array();
+var off = new Array();
+
+function turnOn(obj){
+	var contextStr = $($(obj).parent().parent().find("td").eq(0)).html();
+	contextStr = contextStr.replace("&lt;","<");
+	contextStr = contextStr.replace("&gt;",">");
+	//alert( $(contextStr).attr("path") );
+	on.push($(contextStr).attr("path"));
+	$(obj).html("--")
+}
+
+function turnOff(obj){
+	var contextStr = $($(obj).parent().parent().find("td").eq(0)).html();
+	contextStr = contextStr.replace("&lt;","<");
+	contextStr = contextStr.replace("&gt;",">");
+	//alert( $(contextStr).attr("path") );
+	off.push($(contextStr).attr("path"));
+	
+	$(obj).html("--");
+}
+
+function save(){
+	var a = on; 
+	var b = off;
+	$.ajax({
+		type:"POST",
+		url:"${rc.contextPath}/tomcatUtilController/saveChanges.htm",
+		data:{"on":on,"off":off},
+		success:function(datas){
+			window.location.reload();
+		}
+	});
+}
+</script>
+<table>
+
+<tr>
+	<td><a href="${rc.contextPath}/tomcatUtilController/stopTomcat.htm">STOP_TOMCAT</a></td>
+	<td></td>
+	<td><a href="#" onclick="save()">Save</a></td>
+	
+</tr>
+<tr>
+	<td>content</td>
+	<td>Status</td>
+	<td>action</td>
+</tr>
+
+<#if inUserContextsList?exists>
+	<#list inUserContextsList as item >
+		<tr>
+			<td>
+			<#escape item as item?html>
+				${item}
+			</#escape>
+			</td>
+			<td>deployed</td>
+			<td>
+			<a href="#" onclick="turnOff(this)">Off</a>
+			<td>
+		</tr>
+	</#list>
+</#if>
+
+<#if notUseContextsList?exists>
+	<#list notUseContextsList as item>
+		<tr>
+			<td>
+			<#escape item as item?html>
+				${item}
+			</#escape>
+			</td>
+			<td>Undeployed</td>
+			<td>
+			<a href="#" onclick="turnOn(this)">On</a>
+			<td>
+		</tr>
+	</#list>
+</#if>
+</table>

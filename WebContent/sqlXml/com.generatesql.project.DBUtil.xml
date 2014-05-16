@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<class name="com.generatesql.project.DBUtil">
+  <methodNode name="main">
+    <sqlNode configFile="com.generatesql.project.DBUtil.main.0000.json" id="0000">
+      <currentSql><![CDATA[
+    select
+        a.member_id as memberId,
+        a.member_name as memberName,
+        a.member_pwd as memberPwd,
+        a.email as email,
+        
+    from
+        member_info 
+    left join
+        member_detail b 
+            on a.member_id = b.member_id]]></currentSql>
+      <oldSql/>
+    </sqlNode>
+  </methodNode>
+</class>

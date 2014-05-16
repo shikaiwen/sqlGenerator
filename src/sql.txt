@@ -1,0 +1,20 @@
+create table t_pet(
+	petNo varchar2(20),
+	petName varchar2(20),
+	category varchar2(20),
+	birthDay varchar2(20),
+	hairColor varchar2(20),
+	descriptions varchar2(20),
+	img varchar2(20)
+)
+
+create table t_category (
+	category_id int,
+	category_name varchar2(50)
+)
+
+create table t_sub_categroy(
+	id int,
+	name varchar2(50),
+	category_id int
+)
