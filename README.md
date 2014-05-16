@@ -5,4 +5,5 @@ sqlGenerator
 2 选择要查询的字段
 3 保存配置
 4 生成sql语句
-5 程序员在程序中用每个sql都有的唯一id进行引用
+5 程序员在程序中用每个sql都有的唯一id进行
+6 在github上修改readme文件
